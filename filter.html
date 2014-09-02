@@ -1,0 +1,14 @@
+<html ng-app='FilterModule'>
+	<head>
+		<script src="angular.js"></script>
+		<script src="controller.js"></script>
+	</head>
+
+	<body ng-controller='FilterController'>
+		<input ng-model="searchText">
+		<div ng-repeat='item in items | filter: searchText'>
+			<li ng-bind-html="item.name | boldStyle"></li>
+		</div>
+	</body>
+
+</html>

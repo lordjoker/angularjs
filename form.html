@@ -1,0 +1,16 @@
+<html ng-app='FormModule'>
+	<head>
+		<script src="angular.js"></script>
+		<script src="controller.js"></script>
+	</head>
+
+	<body>
+		<form ng-submit="requestFunding()" ng-controller='FormController'>
+			Starting: <input ng-change="computeNeeded()" ng-model="startingEstimate">
+			Recommendation: {{needed}}
+			<button>Fund my startup!</button>
+			<button ng-click="reset()">Reset</button>
+		</form>
+	</body>
+
+</html>

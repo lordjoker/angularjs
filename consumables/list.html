@@ -1,0 +1,44 @@
+<html>
+<head>
+<script src="../angular.js"></script>
+<script src="./ng-table.min.js"></script>
+<script src="controller.js"></script>
+<link href="./bootstrap.min.css" rel="stylesheet" />
+
+<style type="text/css">
+.ng-table {
+	border: 1px solid black;
+}
+.ng-table td {
+	border: 1px solid black;
+}
+</style>
+</head>
+
+<body ng-app='ConsumablesModule'>
+	<form ng-submit="requestFunding()"
+		ng-controller='CreateConsumablesOfferController'>
+		<div class="form-group" style="width: 420px">
+			<h3>Lista ofert kupna/sprzedazy</h3>
+			<table ng-table="tableParams" show-filter="true"
+				class="table ng-table-rowselected" style="width: 1000px">
+				<tr ng-repeat="item in $data"
+					ng-click="partner.$selected = !partner.$selected; changeSelection(partner)"
+					ng-class="{'active': partner.$selected}">
+					<td data-title="'Tytul'" sortable="'title'"
+						filter="{ 'title': 'text' }">{{item.title}}</td>
+					<td data-title="'Opis'" sortable="'description'"
+						filter="{ 'description': 'text' }">{{item.description}}</td>
+					<td data-title="'Typ'" sortable="'type'"
+						filter="{ 'type': 'text' }">{{item.type}}</td>
+					<td data-title="'Status'" sortable="'state'"
+						filter="{ 'state': 'text' }">{{item.state}}</td>
+					<td data-title="'Data waznosci'" sortable="'validityDate'"
+						filter="{ 'validityDate': 'text' }">{{item.validityDate}}</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<link href="bootstrap.css" rel="stylesheet" />
+		<link href="bootstrap-theme.css" rel="stylesheet" />	
+		<link href="templates/footer.css" rel="stylesheet" />	
+		<script src="../angular.js"></script>
+		<script src="angular-route.js"></script>
+		<script src="main.js"></script>
+	</head>
+
+	<body ng-app="MainModule">
+		 <div id="wrap">
+			<div ng-include='"templates/header.html"'></div>
+			<div ng-view></div>
+		</div>	
+		<div ng-include='"templates/footer.html"'></div>
+	</body>
+
+</html>

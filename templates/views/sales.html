@@ -1,5 +1,17 @@
-<div class="container">
+<div class="container" ng-controller="SalesCtrl">
 	<div class="page-header">
 		<h1>Sprzedaż</h1>
 	</div>
+	
+	<table ng-table="filesTableParams" class="table table-striped table-bordered">
+		<tr ng-repeat="file in $data">
+			<td data-title="'Nazwa pliku'" header-class="text-center">{{file.name}}</td>
+			<td data-title="'Data importu'" header-class="text-center">{{file.importDate}}</td>
+			<td width="10%">
+				<span class="btn btn-default btn-sm glyphicon glyphicon-eye-open" style="margin-right: 10px;"></span>
+				<span class="btn btn-default btn-sm glyphicon glyphicon-download-alt"></span>				
+			</td>
+		</tr>
+	</table>
+	
 </div>
